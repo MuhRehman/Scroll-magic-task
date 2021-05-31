@@ -25,30 +25,19 @@
                         <div style="margin-bottom: 300px;margin-bottom: 20px;">
                             <div class="scrollmagic-pin-spacer">
 
-                                <main class="main-content"></main>
-                                <div class="overlay">
-                                    <!-- <div class="overlay-content"></div> -->
-                                </div>
-                                <button class="toggle">Overlay</button>
+
 
                                 <div class=" panel panel-2">
 
                                     <img class="box img-1" src="img/Accenture-acn-mobile-logo-1.png" class=" img-1"
                                         aria-label="ACN logo" alt="">
-                                    <div class="overlay-content"></div>
-                                    <video autoplay="" muted="" loop="" class="fill"
+                                    <video autoplay="" muted="" loop="" class="fill overlay-content"
                                         poster="/_acnmedia/Thought-Leadership-Assets/Images/mainpage/accenture-dancing-gurl-bg-low"
                                         style="width: 100%;">
                                         <source src="img/Accenture-dancing-girl-1920x1080.mp4" type="video/mp4">
                                     </video>
-                                    <div class="row new-row text-container mobile-padding height-inherit">
-                                        <div class="animate_title title-1 careers">
+                                    <div class=""></div>
 
-
-                                        </div>
-
-
-                                    </div>
                                 </div>
                             </div>
 
@@ -58,7 +47,51 @@
                         </div>
 
                         <script>
-                      
+                            var controller = new ScrollMagic.Controller();
+
+                            var scene = new ScrollMagic.Scene({
+                                duration: 70
+                            })
+
+
+                                .setTween(".box", {
+
+                                    // backgroundColor: 'transparent',
+                                    opacity: '0.0',
+                                    width: '2800px',
+                                    height: '2800px',
+
+                                })
+                                .addTo(controller);
+
+
+
+                            let overlayShown = false;
+                            let scrollPosition = 0;
+
+                            document.querySelector('.toggle').addEventListener('click', function () {
+                                // alert("Dd");
+                                if (overlayShown) {
+                                    showOverlay();
+                                } else {
+                                    removeOverlay();
+                                }
+                                overlayShown = !overlayShown;
+                            });
+
+                            function showOverlay() {
+                                scrollPosition = window.pageYOffset;
+                                const mainEl = document.querySelector('.main-content');
+                                // mainEl.style.top = -scrollPosition + 'px';
+                                document.body.classList.add('show-overlay');
+                            }
+
+                            function removeOverlay() {
+                                document.body.classList.remove('show-overlay');
+                                window.scrollTo(0, scrollPosition);
+                                const mainEl = document.querySelector('.main-content');
+                                mainEl.style.top = 0;
+                            }
 
                         </script>
 </body>
