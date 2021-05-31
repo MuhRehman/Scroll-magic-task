@@ -1,0 +1,70 @@
+.container {
+  height: 1200px;
+  background-color: floralwhite;
+  overscroll-behavior: contain;
+}
+
+.box {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  width: 100px;
+  height: 200px;
+  /* background-color: transparent; */
+}
+.img-1 {
+  width: 10%;
+  position: absolute;
+  top: 50%;
+
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
+.panel {
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow: hidden;
+  background: transparent;
+  border: none !important;
+  box-shadow: none !important;
+}
+.panel-1 {
+  z-index: 4;
+}
+.fill {
+  /* overflow: red; */
+}
+.overlay-content {
+  margin: 50px;
+  background-image: repeating-linear-gradient(
+    rgb(255, 255, 255),
+    rgb(255, 255, 255) 20px,
+    rgb(255, 255, 255) 20px,
+    rgb(255, 255, 255) 40px
+  );
+  height: 100vh;
+}
+
+.main-content {
+  /* background-image: repeating-linear-gradient(lime, blue 103px);
+  width: 100%;
+  height: 10vh; */
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  overflow: auto;
+}
+
+.show-overlay .overlay {
+  display: block;
+}
